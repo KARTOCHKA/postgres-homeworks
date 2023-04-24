@@ -1,6 +1,6 @@
 -- 1. Создать таблицу student с полями student_id serial, first_name varchar, last_name varchar, birthday date, phone varchar
 create table student (
-student_id serial NOT NULL AUTO-INCREMENT,
+student_id serial,
 first_name varchar,
 last_name varchar,
 birthday date,
@@ -20,8 +20,8 @@ ALTER TABLE student RENAME birthday TO birth_date;
 ALTER TABLE student ALTER COLUMN phone SET DATA TYPE varchar(32);
 
 -- 6. Вставить три любых записи с автогенерацией идентификатора
-INSERT INTO student VALUES ('Michael', 'Kirovich', '2000-03-26');
-INSERT INTO student VALUES ('Roman', 'Vudov', '1990-06-10');
-INSERT INTO student VALUES ('Mary', 'Licko', '2002-10-02');
+INSERT INTO student (first_name, last_name, phone) VALUES ('Michael', 'Kirovich', '2000-03-26');
+INSERT INTO student (first_name, last_name, phone) VALUES ('Roman', 'Vudov', '1990-06-10');
+INSERT INTO student (first_name, last_name, phone) VALUES ('Mary', 'Licko', '2002-10-02');
 -- 7. Удалить все данные из таблицы со сбросом идентификатор в исходное состояние
 TRUNCATE TABLE student;
